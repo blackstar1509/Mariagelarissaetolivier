@@ -1,0 +1,74 @@
+body {
+    background-image: url('~/img/plandesalle.png');
+    background-size: 100px; /* Couvre tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat;
+}
+
+img{
+    width: 35px;
+    height: 35px;
+}
+#Container1{
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    transform: translate(510px,69px);
+ }
+ #Container2{
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    transform: translate(580px,-30px);
+ }
+ #second{
+    transform: translate(270px,-229px);
+ }
+ #third{
+    transform: translate(130px,-10px);
+
+ }
+#third img{
+    margin-right: 25px;
+}
+ #Container3{
+    display: flex;
+    flex-direction: row;
+    /* background-color: green; */
+    height: 100px;
+    width: 100px;
+    transform: translate(530px,59px);
+ }
+
+ #Container4{
+    display: flex;
+    flex-direction: row;
+    /* background-color: green; */
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    transform: translate(530px,5px);
+ }
+
+ #Container5{
+   display: flex;
+   flex-direction: row;
+   /* background-color: green; */
+   height: 100px;
+   width: 100px;
+   transform: translate(530px,-45px);
+}
+#Container6{
+   display: flex;
+   flex-direction: row;
+   /* background-color: green; */
+   height: 100px;
+   width: 100px;
+   transform: translate(530px,-98px);
+}

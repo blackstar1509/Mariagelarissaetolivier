@@ -1,0 +1,104 @@
+﻿@using TIS.Core.Entities.Mariage;
+@model List<TableMariage>
+@{
+    ViewData["Title"] = "Plan de Salle";
+   
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewData["Title"]</title>
+</head>
+<body>
+    <div id="first">
+        <div id="Container1">
+            <div class="item1" id="1"><img src="~/img/table.png"></div>
+            <div class="item2"><img src="~/img/table.png"></div>
+            <div class="item3"><img src="~/img/table.png"></div>
+            <div class="item4"><img src="~/img/table.png"></div>
+            <div class="item5"><img src="~/img/table.png"></div>
+        </div>
+        <div id="Container2">
+            <div class="item6"><img src="~/img/table.png"></div>
+            <div class="item7"><img src="~/img/table.png"></div>
+            <div class="item8"><img src="~/img/table.png"></div>
+            <div class="item9"><img src="~/img/table.png"></div>
+            <div class="item10"><img src="~/img/table.png"></div>
+            <div class="item11"><img src="~/img/table.png"></div>
+        </div>
+    </div>
+    <div id="second">
+        <div id="Container1">
+            <div class="item12"><img src="~/img/table.png"></div>
+            <div class="item13"><img src="~/img/table.png"></div>
+            <div class="item14"><img src="~/img/table.png"></div>
+            <div class="item15"><img src="~/img/table.png"></div>
+            <div class="item16"><img src="~/img/table.png"></div>
+            <div class="item17"><img src="~/img/table.png"></div>
+            <div class="item18"><img src="~/img/table.png"></div>
+        </div>
+        <div id="Container2">
+            <div class="item19"><img src="~/img/table.png"></div>
+            <div class="item20"><img src="~/img/table.png"></div>
+            <div class="item21"><img src="~/img/table.png"></div>
+            <div class="item22"><img src="~/img/table.png"></div>
+            <div class="item23"><img src="~/img/table.png"></div>
+        </div>
+    </div>
+    <div id="third">
+        <div id="Container3">
+            <div class="item24"><img src="~/img/table.png"></div>
+            <div class="item25"><img src="~/img/table.png"></div>
+            <div class="item26"><img src="~/img/table.png"></div>
+        </div>
+        <div id="Container4">
+            <div class="item27"><img src="~/img/table.png"></div>
+            <div class="item28"><img src="~/img/table.png"></div>
+            <div class="item29"><img src="~/img/table.png"></div>
+        </div>
+        <div id="Container5">
+            <div class="item30"><img src="~/img/table.png"></div>
+            <div class="item31"><img src="~/img/table.png"></div>
+            <div class="item32"><img src="~/img/table.png"></div>
+        </div>
+        <div id="Container6">
+            <div class="item33"><img src="~/img/table.png"></div>
+            <div class="item34"><img src="~/img/table.png"></div>
+            <div class="item35"><img src="~/img/table.png"></div>
+        </div>
+    </div>
+ @*   @foreach (var table in Model)
+    {
+        var backgroundColor = (table.Id == ViewBag.TableId) ? table.Couleur : "transparent";
+        <div class="item" id="table-@table.Id" style="top: @table.PositionTop; left: @table.PositionLeft; background-color: @backgroundColor;"></div>
+    }
+    *@
+
+
+    @foreach (var table in Model)
+    {
+        if (table.Id == ViewBag.TableId)
+        {
+            <script type="text/javascript">
+                const elements = document.querySelectorAll("item+@(ViewBag.TableId)");
+                elements.forEach(element => {
+                    element.style.backgroundColor = 'red';
+                });
+            </script>
+        }
+    }
+    @foreach (var table in Model)
+    {
+        <div>
+            <span>@table.Nom</span>
+            <img src="@Url.Action("index", "Mariage", new { id = table.Id })" alt="QR Code" />
+        </div>
+    }
+
+
+ </body>
+</html>
